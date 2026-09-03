@@ -1,0 +1,14 @@
+{
+    "name": "bro-calculator",
+    "version": "2.0.0",
+    "description": "A calculator that solves math based entirely on vibes.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.21.2",
+        "mathjs": "^14.0.1"
+    }
+}

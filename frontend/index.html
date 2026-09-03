@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BRO CALCULATOR™</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         HEADER
+         ======================================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            BRO CALCULATOR<span>™</span>
+        </div>
+
+        <div class="tagline">
+            mathematical calculations based entirely on vibes.
+        </div>
+
+    </header>
+
+
+    <!-- ========================================
+         CATEGORY BAR
+         ======================================== -->
+
+    <nav class="categories">
+
+        <button
+            class="category active"
+            data-category="basic"
+        >
+            BASIC
+        </button>
+
+        <button
+            class="category"
+            data-category="trig"
+        >
+            TRIG
+        </button>
+
+        <button
+            class="category"
+            data-category="algebra"
+        >
+            ALGEBRA
+        </button>
+
+        <button
+            class="category"
+            data-category="calculus"
+        >
+            CALCULUS
+        </button>
+
+        <button
+            class="category"
+            data-category="matrix"
+        >
+            MATRIX
+        </button>
+
+        <button
+            class="category"
+            data-category="stats"
+        >
+            STATS
+        </button>
+
+    </nav>
+
+
+    <!-- ========================================
+         MAIN DASHBOARD
+         ======================================== -->
+
+    <main class="dashboard">
+
+
+        <!-- ====================================
+             CALCULATOR PANEL
+             ==================================== -->
+
+        <section class="panel calculator-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="panel-title">
+                        INPUT
+                    </div>
+
+                    <div class="panel-subtitle">
+                        ENTER YOUR MATHEMATICAL PROBLEM
+                    </div>
+
+                </div>
+
+                <div class="status-dot"></div>
+
+            </div>
+
+
+            <!-- =================================
+                 INPUT
+                 ================================= -->
+
+            <div class="input-wrapper">
+
+                <input
+                    type="text"
+                    id="expression"
+                    class="expression-input"
+                    placeholder="e.g. 2 + 2"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <button
+                    class="clear-button"
+                    onclick="clearInput()"
+                    title="Clear"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 SUGGESTIONS
+                 ================================= -->
+
+            <div class="suggestion-label">
+                TRY THESE:
+            </div>
+
+            <div class="suggestions"></div>
+
+
+            <!-- =================================
+                 KEYPAD
+                 ================================= -->
+
+            <div class="keypad">
+
+                <button onclick="add('7')">7</button>
+                <button onclick="add('8')">8</button>
+                <button onclick="add('9')">9</button>
+                <button onclick="add('/')">÷</button>
+
+                <button onclick="add('4')">4</button>
+                <button onclick="add('5')">5</button>
+                <button onclick="add('6')">6</button>
+                <button onclick="add('*')">×</button>
+
+                <button onclick="add('1')">1</button>
+                <button onclick="add('2')">2</button>
+                <button onclick="add('3')">3</button>
+                <button onclick="add('-')">−</button>
+
+                <button onclick="add('0')">0</button>
+                <button onclick="add('.')">.</button>
+                <button onclick="add('(')">(</button>
+                <button onclick="add(')')">)</button>
+
+                <button
+                    class="wide-key"
+                    onclick="add('+')"
+                >
+                    +
+                </button>
+
+                <button
+                    class="wide-key"
+                    onclick="add('^')"
+                >
+                    ^
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 VIBE MODE
+                 ================================= -->
+
+            <div class="vibe-row">
+
+                <label class="vibe-toggle">
+
+                    <input
+                        type="checkbox"
+                        id="vibeMode"
+                        checked
+                    >
+
+                    <span class="toggle"></span>
+
+                    <span class="vibe-text">
+                        VIBE MODE™
+                    </span>
+
+                </label>
+
+                <div class="vibe-description">
+                    accuracy not guaranteed
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 CALCULATE
+                 ================================= -->
+
+            <button
+                class="calculate-button"
+                id="calculateButton"
+                onclick="calculate()"
+            >
+
+                <span>
+                    CALCULATE
+                </span>
+
+                <span class="calculate-arrow">
+                    →
+                </span>
+
+            </button>
+
+        </section>
+
+
+
+        <!-- ====================================
+             RESULT PANEL
+             ==================================== -->
+
+        <section
+            class="panel result-panel"
+            id="resultPanel"
+        >
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="panel-title">
+                        OUTPUT
+                    </div>
+
+                    <div class="panel-subtitle">
+                        THE TRUTH™
+                    </div>
+
+                </div>
+
+                <div class="output-status">
+                    ONLINE
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 RESULT AREA
+                 ================================= -->
+
+            <div class="result-content">
+
+                <div
+                    class="result-label"
+                    id="resultLabel"
+                >
+                    THE ANSWER™
+                </div>
+
+
+                <!-- =================================
+                     BRO GRAPHIC
+                     ================================= -->
+
+                <div
+                    class="bro-graphic"
+                    aria-hidden="true"
+                >
+
+                    <svg
+                        viewBox="0 0 180 180"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <!-- Hair spikes -->
+
+                        <path
+                            d="
+                                M45 70
+                                L34 54
+                                L51 58
+                                L43 42
+                                L62 49
+                                L61 30
+                                L76 43
+                                L84 25
+                                L94 43
+                                L110 30
+                                L109 48
+                                L128 39
+                                L120 57
+                                L139 54
+                                L128 70
+                            "
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+
+                        <!-- Face -->
+
+                        <path
+                            d="
+                                M47 68
+                                C45 90 49 118 69 133
+                                C83 143 105 143 119 132
+                                C137 117 139 89 132 68
+                            "
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                        />
+
+
+                        <!-- Left sunglasses -->
+
+                        <path
+                            d="
+                                M48 78
+                                L76 78
+                                L82 96
+                                L55 96
+                                Z
+                            "
+                            fill="currentColor"
+                        />
+
+
+                        <!-- Right sunglasses -->
+
+                        <path
+                            d="
+                                M96 78
+                                L128 78
+                                L123 96
+                                L96 96
+                                Z
+                            "
+                            fill="currentColor"
+                        />
+
+
+                        <!-- Glass bridge -->
+
+                        <path
+                            d="
+                                M82 84
+                                C87 80 91 80 96 84
+                            "
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                        />
+
+
+                        <!-- Nose -->
+
+                        <path
+                            d="
+                                M88 96
+                                L84 111
+                                L94 113
+                            "
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                        />
+
+
+                        <!-- Mouth -->
+
+                        <path
+                            d="
+                                M77 122
+                                C86 126 96 126 105 121
+                            "
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                        />
+
+
+                        <!-- Neck -->
+
+                        <path
+                            d="
+                                M72 134
+                                L72 148
+
+                                M108 134
+                                L108 148
+                            "
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                        />
+
+
+                        <!-- Attitude marks -->
+
+                        <path
+                            d="
+                                M26 88
+                                L15 82
+
+                                M25 103
+                                L12 105
+
+                                M144 87
+                                L157 81
+
+                                M146 103
+                                L160 106
+                            "
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <!-- =================================
+                     GLITCH STATUS
+                     ================================= -->
+
+                <div
+                    class="glitch-status"
+                    id="glitchStatus"
+                ></div>
+
+
+                <!-- =================================
+                     ANSWER
+                     ================================= -->
+
+                <div
+                    class="answer"
+                    id="answer"
+                >
+                    ???
+                </div>
+
+
+                <!-- =================================
+                     BRO REACTION
+                     ================================= -->
+
+                <div
+                    class="bro-message"
+                    id="broMessage"
+                >
+                    Bro is waiting for your equation.
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 STATS
+                 ================================= -->
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-label">
+                        CONFIDENCE
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="confidence"
+                    >
+                        --
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-label">
+                        DIFFICULTY
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="difficulty"
+                    >
+                        --
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-label">
+                        AURA
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="aura"
+                    >
+                        --
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 EXPLANATION
+                 ================================= -->
+
+            <button
+                class="explain-button"
+                id="explainButton"
+            >
+                EXPLAIN THIS NONSENSE
+            </button>
+
+
+            <div
+                class="explanation"
+                id="explanation"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+
+    <footer class="footer">
+
+        <div>
+            BRO CALCULATOR™
+        </div>
+
+        <div>
+            NO MATH WAS CONSULTED IN THE MAKING OF THIS ANSWER.
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================
+         SCRIPT
+         ======================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

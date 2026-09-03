@@ -2,96 +2,130 @@
 
 
 
-# [Project Name] 🎯
+# The BRO Calculator 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Mango
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Meghna Rajesh Vichattu - Model Engineering College
+- Member 3: Shivani S Nair - Model Engineering College
 
 ### Project Description
-[2-3 lines about what your project does]
+
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Traditional calculators have a serious flaw: they always cooperate. They are too predictable and give us answers whether they want to or not.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+BRO Calculator gives calculators a choice- solve the problem or simply say 'nah bro'.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- Java Script, HTML, CSS
+- Node.js, Express.js
+- Math.js, CORS
+- Visual Studio Code, Git, GitHub, Node Package Manager (npm)
 
 ### Implementation
 For Software:
+BRO Calculator consists of three main parts:
+
+1. Frontend
+The frontend provides the calculator interface, category selection, input system, keypad, result display, animations, and visual glitch effects.
+
+2. Backend
+The Node.js + Express backend receives mathematical expressions and communicates with the calculation engine.
+
+3. BRO Chaos Engine™
+The chaos engine decides whether BRO will:
+Calculate correctly.
+Produce a wrong answer.
+Refuse to calculate.
+Corrupt the result.
+Generate a suspiciously confident response.
+
+The final result is then returned to the frontend and displayed to the user.
 # Installation
-[commands]
+Clone the repository:
+
+git clone <C:\Users\Lenovo\useless_project_temp>
+
+Navigate into the backend directory:
+
+cd useless_project_temp/backend
+
+Install dependencies:
+
+npm install
 
 # Run
-[commands]
+Start the server:
+
+npm start
+
+Then open:
+
+http://localhost:3000
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+[alt text](image.png)
+The image above shows the basic interface of the BRO Calculator.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+[alt text](image-1.png)
+Ocassionally the incorrect answer is displayed.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+[alt text](image-2.png)
+The BRO Calculator may also refuse to answer your questions.
+
+![alt text](image-4.png)
+Useless answers may also be provided.
+
+![alt text](image-5.png)
+Rarely, BRO might decide to bless us with the right answers.
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+The workflow showing how a mathematical expression travels from the frontend to the backend, through the BRO Chaos Engine™, and back to the user as a suspiciously confident answer.
 
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
+Basic Flow
+User enters equation
+        ↓
+Frontend
+        ↓
+Express API
+        ↓
+Math.js
+        ↓
+BRO Chaos Engine™
+        ↓
+ ┌───────────────┐
+ │               │
+Correct       Wrong
+ │               │
+ └───────┬───────┘
+         ↓
+      Glitch?
+         ↓
+   BRO Response
+         ↓
+      Frontend
+         ↓
+   User questions life
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
+<video controls src="BRO Calculator DEMO.mp4" title="Title"></video>
+During this demonstration, we witness the BRO Calculator producing the wrong answer, the correct answer and then glitching to the incorrect output as well as outright refusing to solve the equation as well.
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Meghna: backend (package.json, server.js, broEngine.js)
+- Shivani: frontend (index.html, script.js, style.css)
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 

@@ -1,0 +1,1427 @@
+/* =========================================================
+   BRO CALCULATOR™
+   NEON BRO VISUAL STYLE
+   ORIGINAL LAYOUT PRESERVED
+   ========================================================= */
+
+
+/* =========================================================
+   FONTS
+   ========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap'
+);
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 75% 15%,
+            rgba(168, 85, 255, 0.055),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(183, 255, 0, 0.035),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at top left,
+            #101012 0%,
+            #07070b 42%,
+            #030305 100%
+        );
+
+    color: #eeeeee;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    padding:
+        32px 40px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    max-width: 1400px;
+
+    margin:
+        0 auto 28px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+
+    font-family:
+        "Anton",
+        sans-serif;
+
+    font-size: 42px;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    letter-spacing: -1px;
+
+    color: #b7ff00;
+
+    text-shadow:
+        0 0 8px rgba(183, 255, 0, 0.18),
+        0 0 20px rgba(183, 255, 0, 0.06);
+}
+
+.logo span {
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 11px;
+
+    vertical-align: top;
+
+    margin-left: 4px;
+
+    color: #b7ff00;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
+
+.tagline {
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+
+    color: #777783;
+}
+
+
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
+
+.categories {
+
+    max-width: 1400px;
+
+    margin:
+        0 auto 22px;
+
+    display: flex;
+
+    gap: 8px;
+
+    border-bottom:
+        1px solid #20202b;
+
+    padding-bottom: 12px;
+}
+
+.category {
+
+    background:
+        rgba(255, 255, 255, 0.015);
+
+    border:
+        1px solid #292936;
+
+    color: #858592;
+
+    padding:
+        9px 17px;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    transition:
+        0.2s ease;
+}
+
+.category:hover {
+
+    color: #b7ff00;
+
+    border-color: #8abf00;
+
+    background:
+        rgba(183, 255, 0, 0.025);
+
+    box-shadow:
+        0 0 14px rgba(183, 255, 0, 0.08);
+}
+
+.category.active {
+
+    color: #b7ff00;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(183, 255, 0, 0.08),
+            rgba(168, 85, 255, 0.04)
+        );
+
+    border-color: #b7ff00;
+
+    box-shadow:
+        0 0 15px rgba(183, 255, 0, 0.10);
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ORIGINAL TWO COLUMN LAYOUT
+   ========================================================= */
+
+.dashboard {
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.panel {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 17, 24, 0.97),
+            rgba(7, 7, 12, 0.98)
+        );
+
+    border:
+        1px solid #292936;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.35),
+        inset 0 0 30px rgba(255, 255, 255, 0.008);
+}
+
+
+/* TOP NEON LINE */
+
+.panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b7ff00,
+            #a855ff,
+            transparent
+        );
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 24px;
+}
+
+.panel-title {
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #b7ff00;
+}
+
+.panel-subtitle {
+
+    margin-top: 5px;
+
+    color: #626270;
+
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #b7ff00;
+
+    box-shadow:
+        0 0 5px #b7ff00,
+        0 0 14px rgba(183, 255, 0, 0.55);
+
+    animation:
+        statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 5px #b7ff00,
+            0 0 14px rgba(183, 255, 0, 0.55);
+    }
+
+    50% {
+        opacity: 0.65;
+
+        box-shadow:
+            0 0 3px #b7ff00,
+            0 0 7px rgba(183, 255, 0, 0.3);
+    }
+}
+
+.output-status {
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #a855ff;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.expression-input {
+
+    width: 100%;
+
+    height: 64px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #08080d,
+            #0d0d14
+        );
+
+    border:
+        1px solid #7946ad;
+
+    color: #ffffff;
+
+    padding:
+        0 48px 0 18px;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    outline: none;
+
+    border-radius: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    box-shadow:
+        0 0 20px rgba(168, 85, 255, 0.06),
+        inset 0 0 20px rgba(168, 85, 255, 0.025);
+}
+
+.expression-input:focus {
+
+    border-color: #b7ff00;
+
+    box-shadow:
+        0 0 18px rgba(183, 255, 0, 0.10),
+        inset 0 0 18px rgba(183, 255, 0, 0.025);
+}
+
+.expression-input::placeholder {
+    color: #41414d;
+}
+
+.clear-button {
+
+    position: absolute;
+
+    right: 13px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #666674;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+.clear-button:hover {
+
+    color: #b7ff00;
+
+    text-shadow:
+        0 0 10px rgba(183, 255, 0, 0.35);
+}
+
+
+/* =========================================================
+   SUGGESTIONS
+   ========================================================= */
+
+.suggestion-label {
+
+    margin-top: 18px;
+
+    margin-bottom: 8px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    color: #626270;
+}
+
+.suggestions {
+
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+}
+
+.suggestions button {
+
+    background:
+        #0c0c12;
+
+    border:
+        1px solid #292936;
+
+    color: #858592;
+
+    padding:
+        7px 10px;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 9px;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    transition:
+        0.2s ease;
+}
+
+.suggestions button:hover {
+
+    color: #b7ff00;
+
+    border-color: #8dbf00;
+
+    box-shadow:
+        0 0 10px rgba(183, 255, 0, 0.08);
+}
+
+
+/* =========================================================
+   KEYPAD
+   ========================================================= */
+
+.keypad {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.keypad button {
+
+    height: 43px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #12121a,
+            #09090f
+        );
+
+    border:
+        1px solid #292936;
+
+    color: #c0c0c9;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    border-radius: 9px;
+
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+.keypad button:hover {
+
+    background:
+        linear-gradient(
+            145deg,
+            #181821,
+            #101018
+        );
+
+    border-color: #a855ff;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 12px rgba(168, 85, 255, 0.10);
+}
+
+.keypad button:active {
+
+    transform:
+        scale(0.97);
+
+    border-color: #b7ff00;
+
+    box-shadow:
+        0 0 14px rgba(183, 255, 0, 0.12);
+}
+
+.wide-key {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   VIBE MODE
+   ========================================================= */
+
+.vibe-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding:
+        12px 0;
+
+    border-top:
+        1px solid #20202b;
+}
+
+.vibe-toggle {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+}
+
+.vibe-toggle input {
+    display: none;
+}
+
+.toggle {
+
+    position: relative;
+
+    width: 31px;
+
+    height: 17px;
+
+    border-radius: 20px;
+
+    background: #292934;
+
+    transition:
+        0.2s ease;
+}
+
+.toggle::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 3px;
+
+    left: 3px;
+
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #777783;
+
+    transition:
+        0.2s ease;
+}
+
+.vibe-toggle input:checked + .toggle {
+
+    background:
+        rgba(183, 255, 0, 0.28);
+}
+
+.vibe-toggle input:checked + .toggle::after {
+
+    left: 17px;
+
+    background: #b7ff00;
+
+    box-shadow:
+        0 0 8px #b7ff00;
+}
+
+.vibe-text {
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    color: #b7ff00;
+}
+
+.vibe-description {
+
+    color: #50505c;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CALCULATE BUTTON
+   ========================================================= */
+
+.calculate-button {
+
+    width: 100%;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b7ff00,
+            #c9ff3c
+        );
+
+    color: #050505;
+
+    border: none;
+
+    font-family:
+        "Anton",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    transition:
+        0.2s ease;
+
+    box-shadow:
+        0 0 20px rgba(183, 255, 0, 0.18);
+}
+
+.calculate-button:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            #c7ff32,
+            #d8ff76
+        );
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 0 30px rgba(183, 255, 0, 0.28);
+}
+
+.calculate-button:active {
+    transform: translateY(0);
+}
+
+.calculate-button:disabled {
+    opacity: 0.45;
+
+    cursor: wait;
+}
+
+.calculate-arrow {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   RESULT PANEL
+   ========================================================= */
+
+.result-panel {
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-color: #292936;
+}
+
+
+/* =========================================================
+   RESULT CONTENT
+   ========================================================= */
+
+.result-content {
+
+    position: relative;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        35px 10px;
+}
+
+
+/* =========================================================
+   RESULT LABEL
+   ========================================================= */
+
+.result-label {
+
+    min-height: 16px;
+
+    color: #a855ff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 8px rgba(168, 85, 255, 0.2);
+}
+
+
+/* =========================================================
+   BRO GRAPHIC
+   ========================================================= */
+
+.bro-graphic {
+
+    position: absolute;
+
+    right: 5%;
+
+    bottom: 18%;
+
+    width: 135px;
+
+    height: 135px;
+
+    color: #a855ff;
+
+    opacity: 0.95;
+
+    pointer-events: none;
+
+    transform:
+        rotate(-3deg);
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(168, 85, 255, 0.25)
+        );
+
+    animation:
+        broFloat 4s ease-in-out infinite;
+}
+
+.bro-graphic svg {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+}
+
+
+/* FLOATING EFFECT */
+
+@keyframes broFloat {
+
+    0%,
+    100% {
+        transform:
+            rotate(-3deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-1deg)
+            translateY(-4px);
+    }
+}
+
+
+/* LIME DOTS */
+
+.bro-graphic::before,
+.bro-graphic::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #b7ff00;
+
+    box-shadow:
+        0 0 8px rgba(183, 255, 0, 0.5);
+}
+
+.bro-graphic::before {
+
+    top: 18px;
+
+    right: 4px;
+}
+
+.bro-graphic::after {
+
+    bottom: 15px;
+
+    left: 4px;
+}
+
+
+/* =========================================================
+   ANSWER
+   ========================================================= */
+
+.answer {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 12px;
+
+    max-width: 100%;
+
+    word-break: break-word;
+
+    font-family:
+        "Anton",
+        sans-serif;
+
+    font-size:
+        clamp(
+            52px,
+            7vw,
+            92px
+        );
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    color: #b7ff00;
+
+    text-shadow:
+        0 0 10px rgba(183, 255, 0, 0.15),
+        0 0 25px rgba(183, 255, 0, 0.07);
+}
+
+
+/* =========================================================
+   BRO REACTION / CAPTION
+   ========================================================= */
+
+.bro-message {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 520px;
+
+    margin-top: 22px;
+
+    color: #d4d4dc;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.3px;
+
+    font-style: italic;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.04);
+}
+
+
+/* QUOTE MARK */
+
+.bro-message::before {
+
+    content: "“";
+
+    color: #b7ff00;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    vertical-align: -6px;
+
+    margin-right: 3px;
+
+    text-shadow:
+        0 0 8px rgba(183, 255, 0, 0.2);
+}
+
+
+/* =========================================================
+   GLITCH STATUS
+   ========================================================= */
+
+.glitch-status {
+
+    min-height: 16px;
+
+    margin-top: 10px;
+
+    color: #a855ff;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    transform:
+        translateY(-5px);
+
+    transition:
+        opacity 0.12s ease,
+        transform 0.12s ease;
+}
+
+.glitch-status.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid #252532;
+
+    border-bottom:
+        1px solid #252532;
+}
+
+.stat {
+
+    padding:
+        14px 10px;
+
+    text-align: center;
+
+    border-right:
+        1px solid #252532;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat-label {
+
+    color: #595966;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.stat-value {
+
+    margin-top: 6px;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #b7ff00;
+}
+
+
+/* =========================================================
+   EXPLAIN BUTTON
+   ========================================================= */
+
+.explain-button {
+
+    margin-top: 16px;
+
+    width: 100%;
+
+    height: 38px;
+
+    background:
+        transparent;
+
+    border:
+        1px solid #713da0;
+
+    color: #a855ff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    cursor: pointer;
+
+    border-radius: 9px;
+
+    transition:
+        0.2s ease;
+}
+
+.explain-button:hover {
+
+    color: #b7ff00;
+
+    border-color: #b7ff00;
+
+    box-shadow:
+        0 0 12px rgba(183, 255, 0, 0.08);
+}
+
+
+/* =========================================================
+   EXPLANATION
+   ========================================================= */
+
+.explanation {
+
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    background:
+        #09090f;
+
+    border:
+        1px solid #292936;
+
+    color: #858591;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    border-radius: 10px;
+}
+
+.explanation.visible {
+    display: block;
+}
+
+
+/* =========================================================
+   ANSWER GLITCH
+   ========================================================= */
+
+.answer.glitching {
+
+    animation:
+        broGlitch
+        0.11s
+        steps(2, end)
+        infinite;
+
+    text-shadow:
+        4px 0 #a855ff,
+        -4px 0 #b7ff00;
+}
+
+
+@keyframes broGlitch {
+
+    0% {
+
+        transform:
+            translateX(0)
+            skewX(0deg);
+
+        opacity: 1;
+    }
+
+    20% {
+
+        transform:
+            translateX(-8px)
+            skewX(-5deg);
+
+        opacity: 0.65;
+    }
+
+    40% {
+
+        transform:
+            translateX(9px)
+            skewX(5deg);
+
+        opacity: 0.9;
+    }
+
+    60% {
+
+        transform:
+            translateX(-5px)
+            skewX(-3deg);
+
+        opacity: 0.5;
+    }
+
+    80% {
+
+        transform:
+            translateX(7px)
+            skewX(4deg);
+
+        opacity: 0.8;
+    }
+
+    100% {
+
+        transform:
+            translateX(0)
+            skewX(0deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   GLITCH PANEL
+   ========================================================= */
+
+.result-panel.system-glitch {
+
+    animation:
+        panelGlitch
+        0.13s
+        steps(2, end)
+        infinite;
+}
+
+
+@keyframes panelGlitch {
+
+    0% {
+        transform:
+            translateX(0);
+    }
+
+    20% {
+        transform:
+            translateX(-5px);
+    }
+
+    40% {
+        transform:
+            translateX(6px);
+    }
+
+    60% {
+        transform:
+            translateX(-4px);
+    }
+
+    80% {
+        transform:
+            translateX(3px);
+    }
+
+    100% {
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================================
+   LABEL FLICKER
+   ===========
