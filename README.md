@@ -14,7 +14,8 @@
 - Member 3: Shivani S Nair - Model Engineering College
 
 ### Project Description
-
+BRO Calculator™ is a completely unnecessary calculator that takes ordinary mathematical problems and solves them using vibes, questionable confidence, and controlled chaos.
+Unlike boring calculators that insist on being correct, BRO Calculator may confidently give you the wrong answer, randomly refuse to calculate, or experience a full-blown mathematical glitch.
 
 ### The Problem (that doesn't exist)
 Traditional calculators have a serious flaw: they always cooperate. They are too predictable and give us answers whether they want to or not.
