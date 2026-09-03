@@ -120,7 +120,7 @@ Correct       Wrong
 
 ### Project Demo
 # Video
-<video controls src="BRO Calculator DEMO.mp4" title="Title"></video>
+<video src="./WhatsApp%20Video%202026-09-04%20at%2003.12.43.mp4" controls width="100%"></video>
 During this demonstration, we witness the BRO Calculator producing the wrong answer, the correct answer and then glitching to the incorrect output as well as outright refusing to solve the equation as well.
 
 ## Team Contributions
