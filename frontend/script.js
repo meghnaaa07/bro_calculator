@@ -285,7 +285,7 @@ async function calculate() {
     try {
 
         const response =
-            await fetch("/api/calculate", {
+            await fetch("https://bro-calculator.onrender.com/api/calculate", {
 
                 method: "POST",
 
