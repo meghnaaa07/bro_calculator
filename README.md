@@ -11,7 +11,7 @@
 
 ### Team Members
 - Member 1: Meghna Rajesh Vichattu - Model Engineering College
-- Member 3: Shivani S Nair - Model Engineering College
+- Member 2: Shivani S Nair - Model Engineering College
 
 ### Project Description
 BRO Calculator™ is a completely unnecessary calculator that takes ordinary mathematical problems and solves them using vibes, questionable confidence, and controlled chaos.
@@ -76,13 +76,13 @@ http://localhost:3000
 For Software:
 
 # Screenshots (Add at least 3)
-[alt text](image.png)
+![alt text](image.png)
 The image above shows the basic interface of the BRO Calculator.
 
-[alt text](image-1.png)
+![alt text](image-1.png)
 Ocassionally the incorrect answer is displayed.
 
-[alt text](image-2.png)
+![alt text](image-2.png)
 The BRO Calculator may also refuse to answer your questions.
 
 ![alt text](image-4.png)
@@ -94,34 +94,12 @@ Rarely, BRO might decide to bless us with the right answers.
 # Diagrams
 The workflow showing how a mathematical expression travels from the frontend to the backend, through the BRO Chaos Engine™, and back to the user as a suspiciously confident answer.
 
-Basic Flow
-User enters equation
-        ↓
-Frontend
-        ↓
-Express API
-        ↓
-Math.js
-        ↓
-BRO Chaos Engine™
-        ↓
- ┌───────────────┐
- │               │
-Correct       Wrong
- │               │
- └───────┬───────┘
-         ↓
-      Glitch?
-         ↓
-   BRO Response
-         ↓
-      Frontend
-         ↓
-   User questions life
+Basic Flow:
+User enters equation -> Frontend -> Express API -> Math.js -> BRO Chaos Engine -> (Correct/Wrong) -> Glitch? -> BRO Response -> Frontend -> User questions life
 
 ### Project Demo
 # Video
-<video src="./WhatsApp%20Video%202026-09-04%20at%2003.12.43.mp4" controls width="100%"></video>
+https://drive.google.com/file/d/17-mJW1aH_RDVVJWKJLV6EpzuZevuc7tA/view?usp=drivesdk
 During this demonstration, we witness the BRO Calculator producing the wrong answer, the correct answer and then glitching to the incorrect output as well as outright refusing to solve the equation as well.
 
 ## Team Contributions
